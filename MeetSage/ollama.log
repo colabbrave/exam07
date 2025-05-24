@@ -1,0 +1,1689 @@
+time=2025-05-24T01:35:20.188+08:00 level=INFO source=routes.go:1205 msg="server config" env="map[HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_CONTEXT_LENGTH:8192 OLLAMA_DEBUG:INFO OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/Users/lanss/.ollama/models OLLAMA_MULTIUSER_CACHE:false OLLAMA_NEW_ENGINE:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:0 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_SCHED_SPREAD:false http_proxy: https_proxy: no_proxy:]"
+time=2025-05-24T01:35:20.193+08:00 level=INFO source=images.go:463 msg="total blobs: 37"
+time=2025-05-24T01:35:20.193+08:00 level=INFO source=images.go:470 msg="total unused blobs removed: 0"
+time=2025-05-24T01:35:20.194+08:00 level=INFO source=routes.go:1258 msg="Listening on 127.0.0.1:11434 (version 0.7.0)"
+time=2025-05-24T01:35:20.221+08:00 level=INFO source=types.go:130 msg="inference compute" id=0 library=metal variant="" compute="" driver=0.0 name="" total="10.7 GiB" available="10.7 GiB"
+[GIN] 2025/05/24 - 01:35:30 | 200 |     963.166µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/05/24 - 01:35:30 | 200 |    3.625417ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2025/05/24 - 01:35:30 | 200 |      12.875µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/05/24 - 01:35:30 | 200 |     763.375µs |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2025/05/24 - 01:35:30 | 200 |     672.167µs |       127.0.0.1 | GET      "/api/tags"
+time=2025-05-24T01:35:30.527+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T01:35:30.538+08:00 level=INFO source=server.go:135 msg="system memory" total="16.0 GiB" free="9.2 GiB" free_swap="0 B"
+time=2025-05-24T01:35:30.538+08:00 level=INFO source=server.go:168 msg=offload library=metal layers.requested=-1 layers.model=41 layers.offload=37 layers.split="" memory.available="[10.7 GiB]" memory.gpu_overhead="0 B" memory.required.full="11.7 GiB" memory.required.partial="10.6 GiB" memory.required.kv="1.6 GiB" memory.required.allocations="[10.6 GiB]" memory.weights.total="8.2 GiB" memory.weights.repeating="7.8 GiB" memory.weights.nonrepeating="402.0 MiB" memory.graph.full="1.0 GiB" memory.graph.partial="1.0 GiB"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 33 key-value pairs and 243 tensors from /Users/lanss/.ollama/models/blobs/sha256-fd7b6731c33c57f61767612f56517460ec2d1e2e5a3f0163e0eb3d8d8cb5df20 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = phi3
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Phi 4
+llama_model_loader: - kv   3:                            general.version str              = 4
+llama_model_loader: - kv   4:                       general.organization str              = Microsoft
+llama_model_loader: - kv   5:                           general.basename str              = phi
+llama_model_loader: - kv   6:                         general.size_label str              = 15B
+llama_model_loader: - kv   7:                            general.license str              = mit
+llama_model_loader: - kv   8:                       general.license.link str              = https://huggingface.co/microsoft/phi-...
+llama_model_loader: - kv   9:                               general.tags arr[str,7]       = ["phi", "nlp", "math", "code", "chat"...
+llama_model_loader: - kv  10:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  11:                        phi3.context_length u32              = 16384
+llama_model_loader: - kv  12:  phi3.rope.scaling.original_context_length u32              = 16384
+llama_model_loader: - kv  13:                      phi3.embedding_length u32              = 5120
+llama_model_loader: - kv  14:                   phi3.feed_forward_length u32              = 17920
+llama_model_loader: - kv  15:                           phi3.block_count u32              = 40
+llama_model_loader: - kv  16:                  phi3.attention.head_count u32              = 40
+llama_model_loader: - kv  17:               phi3.attention.head_count_kv u32              = 10
+llama_model_loader: - kv  18:      phi3.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  19:                  phi3.rope.dimension_count u32              = 128
+llama_model_loader: - kv  20:                        phi3.rope.freq_base f32              = 250000.000000
+llama_model_loader: - kv  21:                          general.file_type u32              = 15
+llama_model_loader: - kv  22:              phi3.attention.sliding_window u32              = 131072
+llama_model_loader: - kv  23:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  24:                         tokenizer.ggml.pre str              = dbrx
+llama_model_loader: - kv  25:                      tokenizer.ggml.tokens arr[str,100352]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  26:                  tokenizer.ggml.token_type arr[i32,100352]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  27:                      tokenizer.ggml.merges arr[str,100000]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  28:                tokenizer.ggml.bos_token_id u32              = 100257
+llama_model_loader: - kv  29:                tokenizer.ggml.eos_token_id u32              = 100257
+llama_model_loader: - kv  30:            tokenizer.ggml.padding_token_id u32              = 100257
+llama_model_loader: - kv  31:                    tokenizer.chat_template str              = {% for message in messages %}{% if (m...
+llama_model_loader: - kv  32:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   81 tensors
+llama_model_loader: - type q4_K:  101 tensors
+llama_model_loader: - type q5_K:   40 tensors
+llama_model_loader: - type q6_K:   21 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 8.43 GiB (4.94 BPW) 
+load: special tokens cache size = 96
+load: token to piece cache size = 0.6151 MB
+print_info: arch             = phi3
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 14.66 B
+print_info: general.name     = Phi 4
+print_info: vocab type       = BPE
+print_info: n_vocab          = 100352
+print_info: n_merges         = 100000
+print_info: BOS token        = 100257 '<|endoftext|>'
+print_info: EOS token        = 100257 '<|endoftext|>'
+print_info: EOT token        = 100265 '<|im_end|>'
+print_info: PAD token        = 100257 '<|endoftext|>'
+print_info: LF token         = 198 'Ċ'
+print_info: FIM PRE token    = 100258 '<|fim_prefix|>'
+print_info: FIM SUF token    = 100260 '<|fim_suffix|>'
+print_info: FIM MID token    = 100259 '<|fim_middle|>'
+print_info: EOG token        = 100257 '<|endoftext|>'
+print_info: EOG token        = 100265 '<|im_end|>'
+print_info: max token length = 256
+llama_model_load: vocab only - skipping tensors
+time=2025-05-24T01:35:30.606+08:00 level=INFO source=server.go:431 msg="starting llama server" cmd="/opt/homebrew/Cellar/ollama/0.7.0/bin/ollama runner --model /Users/lanss/.ollama/models/blobs/sha256-fd7b6731c33c57f61767612f56517460ec2d1e2e5a3f0163e0eb3d8d8cb5df20 --ctx-size 8192 --batch-size 512 --n-gpu-layers 37 --threads 4 --no-mmap --parallel 1 --port 52943"
+time=2025-05-24T01:35:30.608+08:00 level=INFO source=sched.go:472 msg="loaded runners" count=1
+time=2025-05-24T01:35:30.608+08:00 level=INFO source=server.go:591 msg="waiting for llama runner to start responding"
+time=2025-05-24T01:35:30.608+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server not responding"
+time=2025-05-24T01:35:30.621+08:00 level=INFO source=runner.go:815 msg="starting go runner"
+time=2025-05-24T01:35:30.621+08:00 level=INFO source=ggml.go:104 msg=system Metal.0.EMBED_LIBRARY=1 CPU.0.ARM_FMA=1 CPU.0.FP16_VA=1 CPU.0.DOTPROD=1 CPU.0.LLAMAFILE=1 CPU.0.ACCELERATE=1 compiler=cgo(clang)
+time=2025-05-24T01:35:30.622+08:00 level=INFO source=runner.go:874 msg="Server listening on 127.0.0.1:52943"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 33 key-value pairs and 243 tensors from /Users/lanss/.ollama/models/blobs/sha256-fd7b6731c33c57f61767612f56517460ec2d1e2e5a3f0163e0eb3d8d8cb5df20 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = phi3
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Phi 4
+llama_model_loader: - kv   3:                            general.version str              = 4
+llama_model_loader: - kv   4:                       general.organization str              = Microsoft
+llama_model_loader: - kv   5:                           general.basename str              = phi
+llama_model_loader: - kv   6:                         general.size_label str              = 15B
+llama_model_loader: - kv   7:                            general.license str              = mit
+llama_model_loader: - kv   8:                       general.license.link str              = https://huggingface.co/microsoft/phi-...
+llama_model_loader: - kv   9:                               general.tags arr[str,7]       = ["phi", "nlp", "math", "code", "chat"...
+llama_model_loader: - kv  10:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  11:                        phi3.context_length u32              = 16384
+llama_model_loader: - kv  12:  phi3.rope.scaling.original_context_length u32              = 16384
+llama_model_loader: - kv  13:                      phi3.embedding_length u32              = 5120
+llama_model_loader: - kv  14:                   phi3.feed_forward_length u32              = 17920
+llama_model_loader: - kv  15:                           phi3.block_count u32              = 40
+llama_model_loader: - kv  16:                  phi3.attention.head_count u32              = 40
+llama_model_loader: - kv  17:               phi3.attention.head_count_kv u32              = 10
+llama_model_loader: - kv  18:      phi3.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  19:                  phi3.rope.dimension_count u32              = 128
+llama_model_loader: - kv  20:                        phi3.rope.freq_base f32              = 250000.000000
+llama_model_loader: - kv  21:                          general.file_type u32              = 15
+llama_model_loader: - kv  22:              phi3.attention.sliding_window u32              = 131072
+llama_model_loader: - kv  23:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  24:                         tokenizer.ggml.pre str              = dbrx
+llama_model_loader: - kv  25:                      tokenizer.ggml.tokens arr[str,100352]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  26:                  tokenizer.ggml.token_type arr[i32,100352]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  27:                      tokenizer.ggml.merges arr[str,100000]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  28:                tokenizer.ggml.bos_token_id u32              = 100257
+llama_model_loader: - kv  29:                tokenizer.ggml.eos_token_id u32              = 100257
+llama_model_loader: - kv  30:            tokenizer.ggml.padding_token_id u32              = 100257
+llama_model_loader: - kv  31:                    tokenizer.chat_template str              = {% for message in messages %}{% if (m...
+llama_model_loader: - kv  32:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   81 tensors
+llama_model_loader: - type q4_K:  101 tensors
+llama_model_loader: - type q5_K:   40 tensors
+llama_model_loader: - type q6_K:   21 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 8.43 GiB (4.94 BPW) 
+load: special tokens cache size = 96
+load: token to piece cache size = 0.6151 MB
+print_info: arch             = phi3
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 16384
+print_info: n_embd           = 5120
+print_info: n_layer          = 40
+print_info: n_head           = 40
+print_info: n_head_kv        = 10
+print_info: n_rot            = 128
+print_info: n_swa            = 131072
+print_info: n_swa_pattern    = 1
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 4
+print_info: n_embd_k_gqa     = 1280
+print_info: n_embd_v_gqa     = 1280
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-05
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 17920
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 250000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 16384
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 14B
+print_info: model params     = 14.66 B
+print_info: general.name     = Phi 4
+print_info: vocab type       = BPE
+print_info: n_vocab          = 100352
+print_info: n_merges         = 100000
+print_info: BOS token        = 100257 '<|endoftext|>'
+print_info: EOS token        = 100257 '<|endoftext|>'
+print_info: EOT token        = 100265 '<|im_end|>'
+print_info: PAD token        = 100257 '<|endoftext|>'
+print_info: LF token         = 198 'Ċ'
+print_info: FIM PRE token    = 100258 '<|fim_prefix|>'
+print_info: FIM SUF token    = 100260 '<|fim_suffix|>'
+print_info: FIM MID token    = 100259 '<|fim_middle|>'
+print_info: EOG token        = 100257 '<|endoftext|>'
+print_info: EOG token        = 100265 '<|im_end|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = false)
+time=2025-05-24T01:35:30.860+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server loading model"
+load_tensors: offloading 37 repeating layers to GPU
+load_tensors: offloaded 37/41 layers to GPU
+load_tensors:          CPU model buffer size =  1307.89 MiB
+load_tensors:        Metal model buffer size =  7322.44 MiB
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_per_seq = 8192
+llama_context: n_batch       = 512
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 250000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (8192) < n_ctx_train (16384) -- the full capacity of the model will not be utilized
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_load_library: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = false
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: skipping kernel_get_rows_bf16                     (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_1row              (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_l4                (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_bf16                  (not supported)
+ggml_metal_init: skipping kernel_mul_mv_id_bf16_f32                (not supported)
+ggml_metal_init: skipping kernel_mul_mm_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mm_id_bf16_f16                (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h64           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h80           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h96           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h112          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h128          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h192          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk192_hv128   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h256          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk576_hv512   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h96       (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h128      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h192      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk192_hv128 (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h256      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk576_hv512 (not supported)
+ggml_metal_init: skipping kernel_cpy_f32_bf16                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_f32                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_bf16                     (not supported)
+llama_context:        CPU  output buffer size =     0.40 MiB
+llama_kv_cache_unified: kv_size = 8192, type_k = 'f16', type_v = 'f16', n_layer = 40, can_shift = 1, padding = 32
+llama_kv_cache_unified:        CPU KV buffer size =   120.00 MiB
+llama_kv_cache_unified:      Metal KV buffer size =  1480.00 MiB
+llama_kv_cache_unified: KV self size  = 1600.00 MiB, K (f16):  800.00 MiB, V (f16):  800.00 MiB
+llama_context:      Metal compute buffer size =   701.00 MiB
+llama_context:        CPU compute buffer size =   701.01 MiB
+llama_context: graph nodes  = 1686
+llama_context: graph splits = 33 (with bs=512), 3 (with bs=1)
+time=2025-05-24T01:35:35.402+08:00 level=INFO source=server.go:630 msg="llama runner started in 4.79 seconds"
+time=2025-05-24T01:35:35.474+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=16180 keep=4 new=8192
+[GIN] 2025/05/24 - 01:40:07 | 200 |         4m36s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T01:40:07.508+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T01:40:07.586+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=16180 keep=4 new=8192
+[GIN] 2025/05/24 - 01:44:04 | 200 |         3m57s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T01:44:04.952+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T01:44:05.009+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=16180 keep=4 new=8192
+[GIN] 2025/05/24 - 01:48:09 | 200 |          4m4s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T01:48:09.354+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T01:48:09.417+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=16180 keep=4 new=8192
+[GIN] 2025/05/24 - 01:51:59 | 200 |         3m50s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T01:51:59.533+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T01:51:59.580+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=16180 keep=4 new=8192
+[GIN] 2025/05/24 - 01:55:47 | 200 |         3m48s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T01:55:48.122+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T01:55:48.198+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=16180 keep=4 new=8192
+[GIN] 2025/05/24 - 02:00:13 | 200 |         4m25s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:00:13.591+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:00:13.645+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=12092 keep=4 new=8192
+[GIN] 2025/05/24 - 02:04:29 | 200 |         4m16s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:04:30.048+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:04:30.112+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=12092 keep=4 new=8192
+[GIN] 2025/05/24 - 02:09:06 | 200 |         4m36s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:09:06.648+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:09:06.693+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=12092 keep=4 new=8192
+[GIN] 2025/05/24 - 02:13:19 | 200 |         4m13s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:13:20.133+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:13:20.187+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=12092 keep=4 new=8192
+[GIN] 2025/05/24 - 02:17:46 | 200 |         4m25s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:17:46.266+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:17:46.318+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=12092 keep=4 new=8192
+[GIN] 2025/05/24 - 02:22:05 | 200 |         4m18s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:22:05.334+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:22:05.399+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=12092 keep=4 new=8192
+[GIN] 2025/05/24 - 02:27:04 | 200 |         4m58s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2025/05/24 - 02:27:05 | 200 |         974µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/05/24 - 02:27:05 | 200 |   32.122917ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2025/05/24 - 02:27:05 | 200 |     919.334µs |       127.0.0.1 | GET      "/api/tags"
+time=2025-05-24T02:27:05.588+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:27:05.617+08:00 level=INFO source=sched.go:537 msg="updated VRAM based on existing loaded models" gpu=0 library=metal total="10.7 GiB" available="99.6 MiB"
+time=2025-05-24T02:27:05.870+08:00 level=INFO source=sched.go:777 msg="new model will fit in available VRAM in single GPU, loading" model=/Users/lanss/.ollama/models/blobs/sha256-a7c68167febae3112203a122aeb00bb07d097be5f1787a1e484ed28fefb1e5cb gpu=0 parallel=2 available=11453251584 required="9.0 GiB"
+time=2025-05-24T02:27:05.919+08:00 level=INFO source=server.go:135 msg="system memory" total="16.0 GiB" free="9.1 GiB" free_swap="0 B"
+time=2025-05-24T02:27:05.919+08:00 level=INFO source=server.go:168 msg=offload library=metal layers.requested=-1 layers.model=33 layers.offload=33 layers.split="" memory.available="[10.7 GiB]" memory.gpu_overhead="0 B" memory.required.full="9.0 GiB" memory.required.partial="9.0 GiB" memory.required.kv="2.0 GiB" memory.required.allocations="[9.0 GiB]" memory.weights.total="5.0 GiB" memory.weights.repeating="4.6 GiB" memory.weights.nonrepeating="411.0 MiB" memory.graph.full="1.1 GiB" memory.graph.partial="1.1 GiB"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 23 key-value pairs and 291 tensors from /Users/lanss/.ollama/models/blobs/sha256-a7c68167febae3112203a122aeb00bb07d097be5f1787a1e484ed28fefb1e5cb (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = Llama3-TAIDE-LX-8B-Chat-Alpha1
+llama_model_loader: - kv   2:                          llama.block_count u32              = 32
+llama_model_loader: - kv   3:                       llama.context_length u32              = 8192
+llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                          general.file_type u32              = 17
+llama_model_loader: - kv  11:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = smaug-bpe
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 128001
+llama_model_loader: - kv  20:            tokenizer.ggml.padding_token_id u32              = 128001
+llama_model_loader: - kv  21:                    tokenizer.chat_template str              = {% set is_splitted = index is defined...
+llama_model_loader: - kv  22:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type q5_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q5_K - Medium
+print_info: file size   = 5.33 GiB (5.70 BPW) 
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 256
+load: token to piece cache size = 0.8000 MB
+print_info: arch             = llama
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 8.03 B
+print_info: general.name     = Llama3-TAIDE-LX-8B-Chat-Alpha1
+print_info: vocab type       = BPE
+print_info: n_vocab          = 128256
+print_info: n_merges         = 280147
+print_info: BOS token        = 128000 '<|begin_of_text|>'
+print_info: EOS token        = 128001 '<|end_of_text|>'
+print_info: EOT token        = 128009 '<|eot_id|>'
+print_info: PAD token        = 128001 '<|end_of_text|>'
+print_info: LF token         = 198 'Ċ'
+print_info: EOG token        = 128001 '<|end_of_text|>'
+print_info: EOG token        = 128009 '<|eot_id|>'
+print_info: max token length = 256
+llama_model_load: vocab only - skipping tensors
+time=2025-05-24T02:27:06.046+08:00 level=INFO source=server.go:431 msg="starting llama server" cmd="/opt/homebrew/Cellar/ollama/0.7.0/bin/ollama runner --model /Users/lanss/.ollama/models/blobs/sha256-a7c68167febae3112203a122aeb00bb07d097be5f1787a1e484ed28fefb1e5cb --ctx-size 16384 --batch-size 512 --n-gpu-layers 33 --threads 4 --parallel 2 --port 56362"
+time=2025-05-24T02:27:06.053+08:00 level=INFO source=sched.go:472 msg="loaded runners" count=1
+time=2025-05-24T02:27:06.056+08:00 level=INFO source=server.go:591 msg="waiting for llama runner to start responding"
+time=2025-05-24T02:27:06.056+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server not responding"
+time=2025-05-24T02:27:06.089+08:00 level=INFO source=runner.go:815 msg="starting go runner"
+time=2025-05-24T02:27:06.090+08:00 level=INFO source=ggml.go:104 msg=system Metal.0.EMBED_LIBRARY=1 CPU.0.ARM_FMA=1 CPU.0.FP16_VA=1 CPU.0.DOTPROD=1 CPU.0.LLAMAFILE=1 CPU.0.ACCELERATE=1 compiler=cgo(clang)
+time=2025-05-24T02:27:06.091+08:00 level=INFO source=runner.go:874 msg="Server listening on 127.0.0.1:56362"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 23 key-value pairs and 291 tensors from /Users/lanss/.ollama/models/blobs/sha256-a7c68167febae3112203a122aeb00bb07d097be5f1787a1e484ed28fefb1e5cb (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = Llama3-TAIDE-LX-8B-Chat-Alpha1
+llama_model_loader: - kv   2:                          llama.block_count u32              = 32
+llama_model_loader: - kv   3:                       llama.context_length u32              = 8192
+llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                          general.file_type u32              = 17
+llama_model_loader: - kv  11:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = smaug-bpe
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 128001
+llama_model_loader: - kv  20:            tokenizer.ggml.padding_token_id u32              = 128001
+llama_model_loader: - kv  21:                    tokenizer.chat_template str              = {% set is_splitted = index is defined...
+llama_model_loader: - kv  22:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type q5_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q5_K - Medium
+print_info: file size   = 5.33 GiB (5.70 BPW) 
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 256
+load: token to piece cache size = 0.8000 MB
+print_info: arch             = llama
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 8192
+print_info: n_embd           = 4096
+print_info: n_layer          = 32
+print_info: n_head           = 32
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: n_swa_pattern    = 1
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 4
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-05
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 14336
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 0
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 500000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 8192
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 8B
+print_info: model params     = 8.03 B
+print_info: general.name     = Llama3-TAIDE-LX-8B-Chat-Alpha1
+print_info: vocab type       = BPE
+print_info: n_vocab          = 128256
+print_info: n_merges         = 280147
+print_info: BOS token        = 128000 '<|begin_of_text|>'
+print_info: EOS token        = 128001 '<|end_of_text|>'
+print_info: EOT token        = 128009 '<|eot_id|>'
+print_info: PAD token        = 128001 '<|end_of_text|>'
+print_info: LF token         = 198 'Ċ'
+print_info: EOG token        = 128001 '<|end_of_text|>'
+print_info: EOG token        = 128009 '<|eot_id|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+time=2025-05-24T02:27:06.309+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server loading model"
+load_tensors: offloading 32 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 33/33 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =   344.44 MiB
+load_tensors: Metal_Mapped model buffer size =  5115.50 MiB
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 2
+llama_context: n_ctx         = 16384
+llama_context: n_ctx_per_seq = 8192
+llama_context: n_batch       = 1024
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 500000.0
+llama_context: freq_scale    = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_load_library: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = false
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: skipping kernel_get_rows_bf16                     (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_1row              (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_l4                (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_bf16                  (not supported)
+ggml_metal_init: skipping kernel_mul_mv_id_bf16_f32                (not supported)
+ggml_metal_init: skipping kernel_mul_mm_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mm_id_bf16_f16                (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h64           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h80           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h96           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h112          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h128          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h192          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk192_hv128   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h256          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk576_hv512   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h96       (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h128      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h192      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk192_hv128 (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h256      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk576_hv512 (not supported)
+ggml_metal_init: skipping kernel_cpy_f32_bf16                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_f32                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_bf16                     (not supported)
+llama_context:        CPU  output buffer size =     1.01 MiB
+llama_kv_cache_unified: kv_size = 16384, type_k = 'f16', type_v = 'f16', n_layer = 32, can_shift = 1, padding = 32
+llama_kv_cache_unified:      Metal KV buffer size =  2048.00 MiB
+llama_kv_cache_unified: KV self size  = 2048.00 MiB, K (f16): 1024.00 MiB, V (f16): 1024.00 MiB
+llama_context:      Metal compute buffer size =  1088.00 MiB
+llama_context:        CPU compute buffer size =    40.01 MiB
+llama_context: graph nodes  = 1094
+llama_context: graph splits = 2
+time=2025-05-24T02:27:09.840+08:00 level=INFO source=server.go:630 msg="llama runner started in 3.78 seconds"
+time=2025-05-24T02:27:09.855+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=4 new=8192
+[GIN] 2025/05/24 - 02:28:41 | 200 |         1m36s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:28:42.098+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:28:42.107+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=4 new=8192
+[GIN] 2025/05/24 - 02:30:47 | 200 |          2m5s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:30:48.000+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:30:48.008+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=4 new=8192
+[GIN] 2025/05/24 - 02:32:27 | 200 |         1m39s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:32:27.294+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:32:27.302+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=4 new=8192
+[GIN] 2025/05/24 - 02:34:17 | 200 |         1m50s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:34:17.922+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:34:17.931+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=4 new=8192
+[GIN] 2025/05/24 - 02:36:11 | 200 |         1m53s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:36:11.386+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T02:36:11.395+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=4 new=8192
+[GIN] 2025/05/24 - 02:52:56 | 200 |         1m42s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T02:52:56.550+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 03:40:03 | 200 |          2m5s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T03:40:03.177+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 03:58:13 | 200 |          2m4s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T03:58:13.880+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 04:30:28 | 200 |         2m13s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T04:30:28.098+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 04:59:13 | 200 |         1m57s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T04:59:13.032+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 05:31:18 | 200 |          2m4s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T05:31:18.313+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 05:59:59 | 200 |         1m49s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2025/05/24 - 05:59:59 | 200 |      880.75µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/05/24 - 05:59:59 | 200 |    3.019916ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2025/05/24 - 05:59:59 | 200 |     709.667µs |       127.0.0.1 | GET      "/api/tags"
+time=2025-05-24T05:59:59.813+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T05:59:59.845+08:00 level=INFO source=sched.go:537 msg="updated VRAM based on existing loaded models" gpu=0 library=metal total="10.7 GiB" available="1.6 GiB"
+time=2025-05-24T05:59:59.918+08:00 level=INFO source=sched.go:777 msg="new model will fit in available VRAM in single GPU, loading" model=/Users/lanss/.ollama/models/blobs/sha256-ff1d1fc78170d787ee1201778e2dd65ea211654ca5fb7d69b5a2e7b123a50373 gpu=0 parallel=1 available=11453251584 required="9.4 GiB"
+time=2025-05-24T05:59:59.919+08:00 level=INFO source=server.go:135 msg="system memory" total="16.0 GiB" free="2.1 GiB" free_swap="0 B"
+time=2025-05-24T05:59:59.919+08:00 level=INFO source=server.go:168 msg=offload library=metal layers.requested=-1 layers.model=43 layers.offload=43 layers.split="" memory.available="[10.7 GiB]" memory.gpu_overhead="0 B" memory.required.full="9.4 GiB" memory.required.partial="9.4 GiB" memory.required.kv="2.6 GiB" memory.required.allocations="[9.4 GiB]" memory.weights.total="5.1 GiB" memory.weights.repeating="4.4 GiB" memory.weights.nonrepeating="717.8 MiB" memory.graph.full="507.0 MiB" memory.graph.partial="507.0 MiB"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 29 key-value pairs and 464 tensors from /Users/lanss/.ollama/models/blobs/sha256-ff1d1fc78170d787ee1201778e2dd65ea211654ca5fb7d69b5a2e7b123a50373 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma2
+llama_model_loader: - kv   1:                               general.name str              = gemma-2-9b-it
+llama_model_loader: - kv   2:                      gemma2.context_length u32              = 8192
+llama_model_loader: - kv   3:                    gemma2.embedding_length u32              = 3584
+llama_model_loader: - kv   4:                         gemma2.block_count u32              = 42
+llama_model_loader: - kv   5:                 gemma2.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                gemma2.attention.head_count u32              = 16
+llama_model_loader: - kv   7:             gemma2.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   8:    gemma2.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv   9:                gemma2.attention.key_length u32              = 256
+llama_model_loader: - kv  10:              gemma2.attention.value_length u32              = 256
+llama_model_loader: - kv  11:                          general.file_type u32              = 2
+llama_model_loader: - kv  12:              gemma2.attn_logit_softcapping f32              = 50.000000
+llama_model_loader: - kv  13:             gemma2.final_logit_softcapping f32              = 30.000000
+llama_model_loader: - kv  14:            gemma2.attention.sliding_window u32              = 4096
+llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = default
+llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  18:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  19:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  20:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  21:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  22:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  23:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  24:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  25:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  26:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+llama_model_loader: - kv  27:            tokenizer.ggml.add_space_prefix bool             = false
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  169 tensors
+llama_model_loader: - type q4_0:  294 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 5.06 GiB (4.71 BPW) 
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 108
+load: token to piece cache size = 1.6014 MB
+print_info: arch             = gemma2
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 9.24 B
+print_info: general.name     = gemma-2-9b-it
+print_info: vocab type       = SPM
+print_info: n_vocab          = 256000
+print_info: n_merges         = 0
+print_info: BOS token        = 2 '<bos>'
+print_info: EOS token        = 1 '<eos>'
+print_info: EOT token        = 107 '<end_of_turn>'
+print_info: UNK token        = 3 '<unk>'
+print_info: PAD token        = 0 '<pad>'
+print_info: LF token         = 227 '<0x0A>'
+print_info: EOG token        = 1 '<eos>'
+print_info: EOG token        = 107 '<end_of_turn>'
+print_info: max token length = 93
+llama_model_load: vocab only - skipping tensors
+time=2025-05-24T06:00:00.035+08:00 level=INFO source=server.go:431 msg="starting llama server" cmd="/opt/homebrew/Cellar/ollama/0.7.0/bin/ollama runner --model /Users/lanss/.ollama/models/blobs/sha256-ff1d1fc78170d787ee1201778e2dd65ea211654ca5fb7d69b5a2e7b123a50373 --ctx-size 8192 --batch-size 512 --n-gpu-layers 43 --threads 4 --parallel 1 --port 58008"
+time=2025-05-24T06:00:00.038+08:00 level=INFO source=sched.go:472 msg="loaded runners" count=1
+time=2025-05-24T06:00:00.038+08:00 level=INFO source=server.go:591 msg="waiting for llama runner to start responding"
+time=2025-05-24T06:00:00.038+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server not responding"
+time=2025-05-24T06:00:00.050+08:00 level=INFO source=runner.go:815 msg="starting go runner"
+time=2025-05-24T06:00:00.050+08:00 level=INFO source=ggml.go:104 msg=system Metal.0.EMBED_LIBRARY=1 CPU.0.ARM_FMA=1 CPU.0.FP16_VA=1 CPU.0.DOTPROD=1 CPU.0.LLAMAFILE=1 CPU.0.ACCELERATE=1 compiler=cgo(clang)
+time=2025-05-24T06:00:00.051+08:00 level=INFO source=runner.go:874 msg="Server listening on 127.0.0.1:58008"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 29 key-value pairs and 464 tensors from /Users/lanss/.ollama/models/blobs/sha256-ff1d1fc78170d787ee1201778e2dd65ea211654ca5fb7d69b5a2e7b123a50373 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma2
+llama_model_loader: - kv   1:                               general.name str              = gemma-2-9b-it
+llama_model_loader: - kv   2:                      gemma2.context_length u32              = 8192
+llama_model_loader: - kv   3:                    gemma2.embedding_length u32              = 3584
+llama_model_loader: - kv   4:                         gemma2.block_count u32              = 42
+llama_model_loader: - kv   5:                 gemma2.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                gemma2.attention.head_count u32              = 16
+llama_model_loader: - kv   7:             gemma2.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   8:    gemma2.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv   9:                gemma2.attention.key_length u32              = 256
+llama_model_loader: - kv  10:              gemma2.attention.value_length u32              = 256
+llama_model_loader: - kv  11:                          general.file_type u32              = 2
+llama_model_loader: - kv  12:              gemma2.attn_logit_softcapping f32              = 50.000000
+llama_model_loader: - kv  13:             gemma2.final_logit_softcapping f32              = 30.000000
+llama_model_loader: - kv  14:            gemma2.attention.sliding_window u32              = 4096
+llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = default
+llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  18:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  19:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  20:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  21:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  22:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  23:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  24:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  25:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  26:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+llama_model_loader: - kv  27:            tokenizer.ggml.add_space_prefix bool             = false
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  169 tensors
+llama_model_loader: - type q4_0:  294 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 5.06 GiB (4.71 BPW) 
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 108
+load: token to piece cache size = 1.6014 MB
+print_info: arch             = gemma2
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 8192
+print_info: n_embd           = 3584
+print_info: n_layer          = 42
+print_info: n_head           = 16
+print_info: n_head_kv        = 8
+print_info: n_rot            = 256
+print_info: n_swa            = 4096
+print_info: n_swa_pattern    = 2
+print_info: n_embd_head_k    = 256
+print_info: n_embd_head_v    = 256
+print_info: n_gqa            = 2
+print_info: n_embd_k_gqa     = 2048
+print_info: n_embd_v_gqa     = 2048
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-06
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 14336
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 10000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 8192
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 9B
+print_info: model params     = 9.24 B
+print_info: general.name     = gemma-2-9b-it
+print_info: vocab type       = SPM
+print_info: n_vocab          = 256000
+print_info: n_merges         = 0
+print_info: BOS token        = 2 '<bos>'
+print_info: EOS token        = 1 '<eos>'
+print_info: EOT token        = 107 '<end_of_turn>'
+print_info: UNK token        = 3 '<unk>'
+print_info: PAD token        = 0 '<pad>'
+print_info: LF token         = 227 '<0x0A>'
+print_info: EOG token        = 1 '<eos>'
+print_info: EOG token        = 107 '<end_of_turn>'
+print_info: max token length = 93
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+time=2025-05-24T06:00:00.291+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server loading model"
+load_tensors: offloading 42 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 43/43 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =   717.77 MiB
+load_tensors: Metal_Mapped model buffer size =  5185.22 MiB
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_per_seq = 8192
+llama_context: n_batch       = 512
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 10000.0
+llama_context: freq_scale    = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_load_library: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = false
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: skipping kernel_get_rows_bf16                     (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_1row              (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_l4                (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_bf16                  (not supported)
+ggml_metal_init: skipping kernel_mul_mv_id_bf16_f32                (not supported)
+ggml_metal_init: skipping kernel_mul_mm_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mm_id_bf16_f16                (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h64           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h80           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h96           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h112          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h128          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h192          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk192_hv128   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h256          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk576_hv512   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h96       (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h128      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h192      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk192_hv128 (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h256      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk576_hv512 (not supported)
+ggml_metal_init: skipping kernel_cpy_f32_bf16                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_f32                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_bf16                     (not supported)
+llama_context:        CPU  output buffer size =     0.99 MiB
+llama_kv_cache_unified: kv_size = 8192, type_k = 'f16', type_v = 'f16', n_layer = 42, can_shift = 1, padding = 32
+llama_kv_cache_unified:      Metal KV buffer size =  2688.00 MiB
+llama_kv_cache_unified: KV self size  = 2688.00 MiB, K (f16): 1344.00 MiB, V (f16): 1344.00 MiB
+llama_context:      Metal compute buffer size =   507.00 MiB
+llama_context:        CPU compute buffer size =    39.01 MiB
+llama_context: graph nodes  = 1774
+llama_context: graph splits = 2
+time=2025-05-24T06:00:03.832+08:00 level=INFO source=server.go:630 msg="llama runner started in 3.79 seconds"
+time=2025-05-24T06:00:03.853+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=8207 keep=5 new=8192
+[GIN] 2025/05/24 - 06:16:42 | 200 |         1m42s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T06:16:42.844+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T06:16:42.855+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=8207 keep=5 new=8192
+[GIN] 2025/05/24 - 06:45:36 | 200 |         1m36s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T06:45:36.218+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T06:45:36.228+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=8207 keep=5 new=8192
+[GIN] 2025/05/24 - 07:17:15 | 200 |         1m38s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T07:17:15.528+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T07:17:15.539+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=8207 keep=5 new=8192
+[GIN] 2025/05/24 - 07:33:53 | 200 |         1m37s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T07:33:53.795+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T07:33:53.805+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=8207 keep=5 new=8192
+[GIN] 2025/05/24 - 07:55:57 | 200 |          2m1s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T07:55:57.489+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T07:55:57.500+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=8207 keep=5 new=8192
+[GIN] 2025/05/24 - 07:58:03 | 200 |         1m38s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T07:58:03.573+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 07:59:45 | 200 |         1m41s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T07:59:45.177+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:00:17 | 200 | 32.569648042s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:00:17.750+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:00:59 | 200 | 41.285369875s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:00:59.043+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:01:36 | 200 | 37.912894875s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:01:36.965+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:02:13 | 200 | 36.290325583s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:02:13.258+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:02:53 | 200 | 40.086150042s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2025/05/24 - 08:02:53 | 200 |      779.25µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/05/24 - 08:02:53 | 200 |    5.739041ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2025/05/24 - 08:02:53 | 200 |     656.042µs |       127.0.0.1 | GET      "/api/tags"
+time=2025-05-24T08:02:53.832+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:02:53.882+08:00 level=INFO source=sched.go:537 msg="updated VRAM based on existing loaded models" gpu=0 library=metal total="10.7 GiB" available="1.2 GiB"
+time=2025-05-24T08:02:53.973+08:00 level=INFO source=server.go:135 msg="system memory" total="16.0 GiB" free="1.7 GiB" free_swap="0 B"
+time=2025-05-24T08:02:53.975+08:00 level=INFO source=server.go:168 msg=offload library=metal layers.requested=-1 layers.model=49 layers.offload=48 layers.split="" memory.available="[10.7 GiB]" memory.gpu_overhead="0 B" memory.required.full="11.3 GiB" memory.required.partial="10.6 GiB" memory.required.kv="992.0 MiB" memory.required.allocations="[10.6 GiB]" memory.weights.total="6.8 GiB" memory.weights.repeating="6.0 GiB" memory.weights.nonrepeating="787.5 MiB" memory.graph.full="519.5 MiB" memory.graph.partial="519.5 MiB" projector.weights="795.9 MiB" projector.graph="1.0 GiB"
+time=2025-05-24T08:02:54.010+08:00 level=INFO source=server.go:431 msg="starting llama server" cmd="/opt/homebrew/Cellar/ollama/0.7.0/bin/ollama runner --ollama-engine --model /Users/lanss/.ollama/models/blobs/sha256-e8ad13eff07a78d89926e9e8b882317d082ef5bf9768ad7b50fcdbbcd63748de --ctx-size 8192 --batch-size 512 --n-gpu-layers 48 --threads 4 --no-mmap --parallel 1 --port 59107"
+time=2025-05-24T08:02:54.012+08:00 level=INFO source=sched.go:472 msg="loaded runners" count=1
+time=2025-05-24T08:02:54.013+08:00 level=INFO source=server.go:591 msg="waiting for llama runner to start responding"
+time=2025-05-24T08:02:54.013+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server not responding"
+time=2025-05-24T08:02:54.035+08:00 level=INFO source=runner.go:836 msg="starting ollama engine"
+time=2025-05-24T08:02:54.036+08:00 level=INFO source=runner.go:899 msg="Server listening on 127.0.0.1:59107"
+time=2025-05-24T08:02:54.068+08:00 level=INFO source=ggml.go:73 msg="" architecture=gemma3 file_type=Q4_K_M name="" description="" num_tensors=1065 num_key_values=37
+time=2025-05-24T08:02:54.069+08:00 level=INFO source=ggml.go:104 msg=system Metal.0.EMBED_LIBRARY=1 CPU.0.ARM_FMA=1 CPU.0.FP16_VA=1 CPU.0.DOTPROD=1 CPU.0.LLAMAFILE=1 CPU.0.ACCELERATE=1 compiler=cgo(clang)
+time=2025-05-24T08:02:54.264+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server loading model"
+time=2025-05-24T08:02:54.299+08:00 level=INFO source=ggml.go:299 msg="model weights" buffer=CPU size="2.3 GiB"
+time=2025-05-24T08:02:54.299+08:00 level=INFO source=ggml.go:299 msg="model weights" buffer=Metal size="6.0 GiB"
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_load_library: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = false
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: skipping kernel_get_rows_bf16                     (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_1row              (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_l4                (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_bf16                  (not supported)
+ggml_metal_init: skipping kernel_mul_mv_id_bf16_f32                (not supported)
+ggml_metal_init: skipping kernel_mul_mm_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mm_id_bf16_f16                (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h64           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h80           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h96           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h112          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h128          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h192          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk192_hv128   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h256          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk576_hv512   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h96       (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h128      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h192      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk192_hv128 (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h256      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk576_hv512 (not supported)
+ggml_metal_init: skipping kernel_cpy_f32_bf16                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_f32                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_bf16                     (not supported)
+time=2025-05-24T08:02:57.428+08:00 level=INFO source=ggml.go:556 msg="compute graph" backend=Metal buffer_type=Metal size="306.0 MiB"
+time=2025-05-24T08:02:57.428+08:00 level=INFO source=ggml.go:556 msg="compute graph" backend=BLAS buffer_type=CPU size="7.5 MiB"
+time=2025-05-24T08:02:57.428+08:00 level=INFO source=ggml.go:556 msg="compute graph" backend=CPU buffer_type=CPU size="0 B"
+time=2025-05-24T08:02:57.523+08:00 level=INFO source=server.go:630 msg="llama runner started in 3.51 seconds"
+time=2025-05-24T08:02:57.541+08:00 level=WARN source=runner.go:151 msg="truncating input prompt" limit=8192 prompt=8194 keep=4 new=8192
+[GIN] 2025/05/24 - 08:05:25 | 200 |         2m31s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:05:25.367+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:05:25.374+08:00 level=WARN source=runner.go:151 msg="truncating input prompt" limit=8192 prompt=8194 keep=4 new=8192
+[GIN] 2025/05/24 - 08:07:47 | 200 |         2m21s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:07:47.100+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:07:47.107+08:00 level=WARN source=runner.go:151 msg="truncating input prompt" limit=8192 prompt=8194 keep=4 new=8192
+[GIN] 2025/05/24 - 08:09:57 | 200 |         2m10s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:09:57.621+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:09:57.625+08:00 level=WARN source=runner.go:151 msg="truncating input prompt" limit=8192 prompt=8194 keep=4 new=8192
+[GIN] 2025/05/24 - 08:11:59 | 200 |          2m1s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:11:59.433+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:11:59.438+08:00 level=WARN source=runner.go:151 msg="truncating input prompt" limit=8192 prompt=8194 keep=4 new=8192
+[GIN] 2025/05/24 - 08:14:28 | 200 |         2m29s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:14:28.673+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:14:28.679+08:00 level=WARN source=runner.go:151 msg="truncating input prompt" limit=8192 prompt=8194 keep=4 new=8192
+[GIN] 2025/05/24 - 08:17:14 | 200 |         2m46s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:17:15.045+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:19:36 | 200 |         2m21s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:19:36.220+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:21:55 | 200 |         2m19s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:21:56.068+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:24:18 | 200 |         2m22s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:24:18.659+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:26:36 | 200 |         2m17s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:26:36.436+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:28:51 | 200 |         2m14s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:28:51.154+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:31:01 | 200 |         2m10s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2025/05/24 - 08:31:01 | 200 |     639.208µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/05/24 - 08:31:02 | 200 |    5.662333ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2025/05/24 - 08:31:02 | 200 |     656.834µs |       127.0.0.1 | GET      "/api/tags"
+time=2025-05-24T08:31:02.306+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:31:02.322+08:00 level=INFO source=sched.go:537 msg="updated VRAM based on existing loaded models" gpu=0 library=metal total="10.7 GiB" available="105.8 MiB"
+time=2025-05-24T08:31:02.520+08:00 level=INFO source=sched.go:777 msg="new model will fit in available VRAM in single GPU, loading" model=/Users/lanss/.ollama/models/blobs/sha256-667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29 gpu=0 parallel=2 available=11453251584 required="8.3 GiB"
+time=2025-05-24T08:31:02.521+08:00 level=INFO source=server.go:135 msg="system memory" total="16.0 GiB" free="10.4 GiB" free_swap="0 B"
+time=2025-05-24T08:31:02.521+08:00 level=INFO source=server.go:168 msg=offload library=metal layers.requested=-1 layers.model=33 layers.offload=33 layers.split="" memory.available="[10.7 GiB]" memory.gpu_overhead="0 B" memory.required.full="8.3 GiB" memory.required.partial="8.3 GiB" memory.required.kv="2.0 GiB" memory.required.allocations="[8.3 GiB]" memory.weights.total="4.3 GiB" memory.weights.repeating="3.9 GiB" memory.weights.nonrepeating="411.0 MiB" memory.graph.full="1.1 GiB" memory.graph.partial="1.1 GiB"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 29 key-value pairs and 292 tensors from /Users/lanss/.ollama/models/blobs/sha256-667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Meta Llama 3.1 8B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Meta-Llama-3.1
+llama_model_loader: - kv   5:                         general.size_label str              = 8B
+llama_model_loader: - kv   6:                            general.license str              = llama3.1
+llama_model_loader: - kv   7:                               general.tags arr[str,6]       = ["facebook", "meta", "pytorch", "llam...
+llama_model_loader: - kv   8:                          general.languages arr[str,8]       = ["en", "de", "fr", "it", "pt", "hi", ...
+llama_model_loader: - kv   9:                          llama.block_count u32              = 32
+llama_model_loader: - kv  10:                       llama.context_length u32              = 131072
+llama_model_loader: - kv  11:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv  12:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv  13:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv  14:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  15:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  16:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  17:                          general.file_type u32              = 15
+llama_model_loader: - kv  18:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  19:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  20:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  21:                         tokenizer.ggml.pre str              = llama-bpe
+llama_model_loader: - kv  22:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  23:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  24:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  25:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  26:                tokenizer.ggml.eos_token_id u32              = 128009
+llama_model_loader: - kv  27:                    tokenizer.chat_template str              = {{- bos_token }}\n{%- if custom_tools ...
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   66 tensors
+llama_model_loader: - type q4_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 4.58 GiB (4.89 BPW) 
+load: special tokens cache size = 256
+load: token to piece cache size = 0.7999 MB
+print_info: arch             = llama
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 8.03 B
+print_info: general.name     = Meta Llama 3.1 8B Instruct
+print_info: vocab type       = BPE
+print_info: n_vocab          = 128256
+print_info: n_merges         = 280147
+print_info: BOS token        = 128000 '<|begin_of_text|>'
+print_info: EOS token        = 128009 '<|eot_id|>'
+print_info: EOT token        = 128009 '<|eot_id|>'
+print_info: EOM token        = 128008 '<|eom_id|>'
+print_info: LF token         = 198 'Ċ'
+print_info: EOG token        = 128008 '<|eom_id|>'
+print_info: EOG token        = 128009 '<|eot_id|>'
+print_info: max token length = 256
+llama_model_load: vocab only - skipping tensors
+time=2025-05-24T08:31:02.647+08:00 level=INFO source=server.go:431 msg="starting llama server" cmd="/opt/homebrew/Cellar/ollama/0.7.0/bin/ollama runner --model /Users/lanss/.ollama/models/blobs/sha256-667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29 --ctx-size 16384 --batch-size 512 --n-gpu-layers 33 --threads 4 --parallel 2 --port 60938"
+time=2025-05-24T08:31:02.651+08:00 level=INFO source=sched.go:472 msg="loaded runners" count=1
+time=2025-05-24T08:31:02.651+08:00 level=INFO source=server.go:591 msg="waiting for llama runner to start responding"
+time=2025-05-24T08:31:02.651+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server not responding"
+time=2025-05-24T08:31:02.666+08:00 level=INFO source=runner.go:815 msg="starting go runner"
+time=2025-05-24T08:31:02.666+08:00 level=INFO source=ggml.go:104 msg=system Metal.0.EMBED_LIBRARY=1 CPU.0.ARM_FMA=1 CPU.0.FP16_VA=1 CPU.0.DOTPROD=1 CPU.0.LLAMAFILE=1 CPU.0.ACCELERATE=1 compiler=cgo(clang)
+time=2025-05-24T08:31:02.669+08:00 level=INFO source=runner.go:874 msg="Server listening on 127.0.0.1:60938"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 29 key-value pairs and 292 tensors from /Users/lanss/.ollama/models/blobs/sha256-667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Meta Llama 3.1 8B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Meta-Llama-3.1
+llama_model_loader: - kv   5:                         general.size_label str              = 8B
+llama_model_loader: - kv   6:                            general.license str              = llama3.1
+llama_model_loader: - kv   7:                               general.tags arr[str,6]       = ["facebook", "meta", "pytorch", "llam...
+llama_model_loader: - kv   8:                          general.languages arr[str,8]       = ["en", "de", "fr", "it", "pt", "hi", ...
+llama_model_loader: - kv   9:                          llama.block_count u32              = 32
+llama_model_loader: - kv  10:                       llama.context_length u32              = 131072
+llama_model_loader: - kv  11:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv  12:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv  13:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv  14:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  15:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  16:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  17:                          general.file_type u32              = 15
+llama_model_loader: - kv  18:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  19:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  20:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  21:                         tokenizer.ggml.pre str              = llama-bpe
+llama_model_loader: - kv  22:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  23:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  24:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  25:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  26:                tokenizer.ggml.eos_token_id u32              = 128009
+llama_model_loader: - kv  27:                    tokenizer.chat_template str              = {{- bos_token }}\n{%- if custom_tools ...
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   66 tensors
+llama_model_loader: - type q4_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 4.58 GiB (4.89 BPW) 
+load: special tokens cache size = 256
+load: token to piece cache size = 0.7999 MB
+print_info: arch             = llama
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 131072
+print_info: n_embd           = 4096
+print_info: n_layer          = 32
+print_info: n_head           = 32
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: n_swa_pattern    = 1
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 4
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-05
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 14336
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 0
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 500000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 131072
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 8B
+print_info: model params     = 8.03 B
+print_info: general.name     = Meta Llama 3.1 8B Instruct
+print_info: vocab type       = BPE
+print_info: n_vocab          = 128256
+print_info: n_merges         = 280147
+print_info: BOS token        = 128000 '<|begin_of_text|>'
+print_info: EOS token        = 128009 '<|eot_id|>'
+print_info: EOT token        = 128009 '<|eot_id|>'
+print_info: EOM token        = 128008 '<|eom_id|>'
+print_info: LF token         = 198 'Ċ'
+print_info: EOG token        = 128008 '<|eom_id|>'
+print_info: EOG token        = 128009 '<|eot_id|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+time=2025-05-24T08:31:02.903+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server loading model"
+load_tensors: offloading 32 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 33/33 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =   281.81 MiB
+load_tensors: Metal_Mapped model buffer size =  4403.50 MiB
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 2
+llama_context: n_ctx         = 16384
+llama_context: n_ctx_per_seq = 8192
+llama_context: n_batch       = 1024
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 500000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (8192) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_load_library: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = false
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: skipping kernel_get_rows_bf16                     (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_1row              (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_l4                (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_bf16                  (not supported)
+ggml_metal_init: skipping kernel_mul_mv_id_bf16_f32                (not supported)
+ggml_metal_init: skipping kernel_mul_mm_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mm_id_bf16_f16                (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h64           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h80           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h96           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h112          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h128          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h192          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk192_hv128   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h256          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk576_hv512   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h96       (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h128      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h192      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk192_hv128 (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h256      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk576_hv512 (not supported)
+ggml_metal_init: skipping kernel_cpy_f32_bf16                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_f32                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_bf16                     (not supported)
+llama_context:        CPU  output buffer size =     1.01 MiB
+llama_kv_cache_unified: kv_size = 16384, type_k = 'f16', type_v = 'f16', n_layer = 32, can_shift = 1, padding = 32
+llama_kv_cache_unified:      Metal KV buffer size =  2048.00 MiB
+llama_kv_cache_unified: KV self size  = 2048.00 MiB, K (f16): 1024.00 MiB, V (f16): 1024.00 MiB
+llama_context:      Metal compute buffer size =  1088.00 MiB
+llama_context:        CPU compute buffer size =    40.01 MiB
+llama_context: graph nodes  = 1094
+llama_context: graph splits = 2
+time=2025-05-24T08:31:05.917+08:00 level=INFO source=server.go:630 msg="llama runner started in 3.27 seconds"
+time=2025-05-24T08:31:05.927+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=5 new=8192
+[GIN] 2025/05/24 - 08:32:55 | 200 |         1m53s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:32:56.209+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:32:56.231+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=5 new=8192
+[GIN] 2025/05/24 - 08:34:19 | 200 |         1m23s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:34:19.662+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:34:19.676+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=5 new=8192
+[GIN] 2025/05/24 - 08:35:47 | 200 |         1m28s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:35:47.823+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:35:47.841+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=5 new=8192
+[GIN] 2025/05/24 - 08:37:09 | 200 |         1m21s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:37:09.141+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:37:09.150+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=5 new=8192
+[GIN] 2025/05/24 - 08:38:46 | 200 |         1m37s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:38:46.996+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:38:47.005+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10205 keep=5 new=8192
+[GIN] 2025/05/24 - 08:40:06 | 200 |         1m19s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:40:06.623+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:41:37 | 200 |         1m31s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:41:37.972+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:42:53 | 200 |         1m15s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:42:53.671+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:43:20 | 200 | 27.072171833s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:43:20.746+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:43:57 | 200 | 36.300853125s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:43:57.055+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:44:31 | 200 | 34.404388959s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:44:31.470+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+[GIN] 2025/05/24 - 08:45:12 | 200 | 40.915730333s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2025/05/24 - 08:45:12 | 200 |     643.292µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/05/24 - 08:45:12 | 200 |    7.989625ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2025/05/24 - 08:45:12 | 200 |     632.917µs |       127.0.0.1 | GET      "/api/tags"
+time=2025-05-24T08:45:12.800+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:45:12.805+08:00 level=INFO source=sched.go:537 msg="updated VRAM based on existing loaded models" gpu=0 library=metal total="10.7 GiB" available="2.3 GiB"
+time=2025-05-24T08:45:12.863+08:00 level=INFO source=sched.go:777 msg="new model will fit in available VRAM in single GPU, loading" model=/Users/lanss/.ollama/models/blobs/sha256-ff82381e2bea77d91c1b824c7afb83f6fb73e9f7de9dda631bcdbca564aa5435 gpu=0 parallel=2 available=11453251584 required="7.5 GiB"
+time=2025-05-24T08:45:12.863+08:00 level=INFO source=server.go:135 msg="system memory" total="16.0 GiB" free="2.0 GiB" free_swap="0 B"
+time=2025-05-24T08:45:12.863+08:00 level=INFO source=server.go:168 msg=offload library=metal layers.requested=-1 layers.model=33 layers.offload=33 layers.split="" memory.available="[10.7 GiB]" memory.gpu_overhead="0 B" memory.required.full="7.5 GiB" memory.required.partial="7.5 GiB" memory.required.kv="2.0 GiB" memory.required.allocations="[7.5 GiB]" memory.weights.total="3.8 GiB" memory.weights.repeating="3.7 GiB" memory.weights.nonrepeating="105.0 MiB" memory.graph.full="1.1 GiB" memory.graph.partial="1.1 GiB"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 25 key-value pairs and 291 tensors from /Users/lanss/.ollama/models/blobs/sha256-ff82381e2bea77d91c1b824c7afb83f6fb73e9f7de9dda631bcdbca564aa5435 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = Mistral-7B-Instruct-v0.3
+llama_model_loader: - kv   2:                          llama.block_count u32              = 32
+llama_model_loader: - kv   3:                       llama.context_length u32              = 32768
+llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                          general.file_type u32              = 2
+llama_model_loader: - kv  11:                           llama.vocab_size u32              = 32768
+llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = default
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,32768]   = ["<unk>", "<s>", "</s>", "[INST]", "[...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,32768]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,32768]   = [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  21:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  22:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  23:                    tokenizer.chat_template str              = {{ bos_token }}{% for message in mess...
+llama_model_loader: - kv  24:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type q4_0:  225 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 3.83 GiB (4.54 BPW) 
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 771
+load: token to piece cache size = 0.1731 MB
+print_info: arch             = llama
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 7.25 B
+print_info: general.name     = Mistral-7B-Instruct-v0.3
+print_info: vocab type       = SPM
+print_info: n_vocab          = 32768
+print_info: n_merges         = 0
+print_info: BOS token        = 1 '<s>'
+print_info: EOS token        = 2 '</s>'
+print_info: UNK token        = 0 '<unk>'
+print_info: LF token         = 781 '<0x0A>'
+print_info: EOG token        = 2 '</s>'
+print_info: max token length = 48
+llama_model_load: vocab only - skipping tensors
+time=2025-05-24T08:45:12.881+08:00 level=INFO source=server.go:431 msg="starting llama server" cmd="/opt/homebrew/Cellar/ollama/0.7.0/bin/ollama runner --model /Users/lanss/.ollama/models/blobs/sha256-ff82381e2bea77d91c1b824c7afb83f6fb73e9f7de9dda631bcdbca564aa5435 --ctx-size 16384 --batch-size 512 --n-gpu-layers 33 --threads 4 --parallel 2 --port 61844"
+time=2025-05-24T08:45:12.883+08:00 level=INFO source=sched.go:472 msg="loaded runners" count=1
+time=2025-05-24T08:45:12.884+08:00 level=INFO source=server.go:591 msg="waiting for llama runner to start responding"
+time=2025-05-24T08:45:12.884+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server not responding"
+time=2025-05-24T08:45:12.932+08:00 level=INFO source=runner.go:815 msg="starting go runner"
+time=2025-05-24T08:45:12.932+08:00 level=INFO source=ggml.go:104 msg=system Metal.0.EMBED_LIBRARY=1 CPU.0.ARM_FMA=1 CPU.0.FP16_VA=1 CPU.0.DOTPROD=1 CPU.0.LLAMAFILE=1 CPU.0.ACCELERATE=1 compiler=cgo(clang)
+time=2025-05-24T08:45:12.933+08:00 level=INFO source=runner.go:874 msg="Server listening on 127.0.0.1:61844"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 25 key-value pairs and 291 tensors from /Users/lanss/.ollama/models/blobs/sha256-ff82381e2bea77d91c1b824c7afb83f6fb73e9f7de9dda631bcdbca564aa5435 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = Mistral-7B-Instruct-v0.3
+llama_model_loader: - kv   2:                          llama.block_count u32              = 32
+llama_model_loader: - kv   3:                       llama.context_length u32              = 32768
+llama_model_loader: - kv   4:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   7:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   8:                       llama.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                          general.file_type u32              = 2
+llama_model_loader: - kv  11:                           llama.vocab_size u32              = 32768
+llama_model_loader: - kv  12:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = default
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,32768]   = ["<unk>", "<s>", "</s>", "[INST]", "[...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,32768]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,32768]   = [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  21:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  22:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  23:                    tokenizer.chat_template str              = {{ bos_token }}{% for message in mess...
+llama_model_loader: - kv  24:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type q4_0:  225 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 3.83 GiB (4.54 BPW) 
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 771
+load: token to piece cache size = 0.1731 MB
+print_info: arch             = llama
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 32768
+print_info: n_embd           = 4096
+print_info: n_layer          = 32
+print_info: n_head           = 32
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: n_swa_pattern    = 1
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 4
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-05
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 14336
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 0
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 1000000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 32768
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 7B
+print_info: model params     = 7.25 B
+print_info: general.name     = Mistral-7B-Instruct-v0.3
+print_info: vocab type       = SPM
+print_info: n_vocab          = 32768
+print_info: n_merges         = 0
+print_info: BOS token        = 1 '<s>'
+print_info: EOS token        = 2 '</s>'
+print_info: UNK token        = 0 '<unk>'
+print_info: LF token         = 781 '<0x0A>'
+print_info: EOG token        = 2 '</s>'
+print_info: max token length = 48
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+time=2025-05-24T08:45:13.136+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server loading model"
+load_tensors: offloading 32 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 33/33 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =    72.00 MiB
+load_tensors: Metal_Mapped model buffer size =  3850.02 MiB
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 2
+llama_context: n_ctx         = 16384
+llama_context: n_ctx_per_seq = 8192
+llama_context: n_batch       = 1024
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (8192) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_load_library: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = false
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: skipping kernel_get_rows_bf16                     (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_1row              (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_l4                (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_bf16                  (not supported)
+ggml_metal_init: skipping kernel_mul_mv_id_bf16_f32                (not supported)
+ggml_metal_init: skipping kernel_mul_mm_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mm_id_bf16_f16                (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h64           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h80           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h96           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h112          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h128          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h192          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk192_hv128   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h256          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk576_hv512   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h96       (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h128      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h192      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk192_hv128 (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h256      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk576_hv512 (not supported)
+ggml_metal_init: skipping kernel_cpy_f32_bf16                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_f32                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_bf16                     (not supported)
+llama_context:        CPU  output buffer size =     0.28 MiB
+llama_kv_cache_unified: kv_size = 16384, type_k = 'f16', type_v = 'f16', n_layer = 32, can_shift = 1, padding = 32
+llama_kv_cache_unified:      Metal KV buffer size =  2048.00 MiB
+llama_kv_cache_unified: KV self size  = 2048.00 MiB, K (f16): 1024.00 MiB, V (f16): 1024.00 MiB
+llama_context:      Metal compute buffer size =  1088.00 MiB
+llama_context:        CPU compute buffer size =    40.01 MiB
+llama_context: graph nodes  = 1094
+llama_context: graph splits = 2
+time=2025-05-24T08:45:15.660+08:00 level=INFO source=server.go:630 msg="llama runner started in 2.78 seconds"
+time=2025-05-24T08:45:15.665+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=14281 keep=5 new=8192
+[GIN] 2025/05/24 - 08:46:41 | 200 |         1m29s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:46:42.065+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:46:42.068+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=14281 keep=5 new=8192
+[GIN] 2025/05/24 - 08:49:16 | 200 |         2m34s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:49:16.559+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:49:16.562+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=14281 keep=5 new=8192
+[GIN] 2025/05/24 - 08:51:13 | 200 |         1m56s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:51:13.082+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:51:13.086+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=14281 keep=5 new=8192
+[GIN] 2025/05/24 - 08:53:05 | 200 |         1m52s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:53:05.827+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:53:05.831+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=14281 keep=5 new=8192
+[GIN] 2025/05/24 - 08:54:52 | 200 |         1m46s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:54:52.829+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:54:52.832+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=14281 keep=5 new=8192
+[GIN] 2025/05/24 - 08:57:32 | 200 |         2m39s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:57:32.549+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:57:32.552+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10516 keep=5 new=8192
+[GIN] 2025/05/24 - 08:59:32 | 200 |         1m59s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T08:59:32.420+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T08:59:32.422+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10516 keep=5 new=8192
+[GIN] 2025/05/24 - 09:01:10 | 200 |         1m38s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:01:10.788+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:01:10.790+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10516 keep=5 new=8192
+[GIN] 2025/05/24 - 09:02:47 | 200 |         1m36s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:02:47.056+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:02:47.059+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10516 keep=5 new=8192
+[GIN] 2025/05/24 - 09:04:31 | 200 |         1m44s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:04:31.868+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:04:31.870+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10516 keep=5 new=8192
+[GIN] 2025/05/24 - 09:05:54 | 200 |         1m23s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:05:54.955+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:05:54.958+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=10516 keep=5 new=8192
+[GIN] 2025/05/24 - 09:07:23 | 200 |         1m28s |       127.0.0.1 | POST     "/api/chat"
+[GIN] 2025/05/24 - 09:07:23 | 200 |     847.958µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/05/24 - 09:07:23 | 200 |    7.888042ms |       127.0.0.1 | GET      "/api/tags"
+[GIN] 2025/05/24 - 09:07:23 | 200 |       615.5µs |       127.0.0.1 | GET      "/api/tags"
+time=2025-05-24T09:07:23.968+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:07:23.972+08:00 level=INFO source=sched.go:537 msg="updated VRAM based on existing loaded models" gpu=0 library=metal total="10.7 GiB" available="3.2 GiB"
+time=2025-05-24T09:07:24.005+08:00 level=INFO source=sched.go:777 msg="new model will fit in available VRAM in single GPU, loading" model=/Users/lanss/.ollama/models/blobs/sha256-633fc5be925f9a484b61d6f9b9a78021eeb462100bd557309f01ba84cac26adf gpu=0 parallel=2 available=11453251584 required="9.7 GiB"
+time=2025-05-24T09:07:24.006+08:00 level=INFO source=server.go:135 msg="system memory" total="16.0 GiB" free="2.5 GiB" free_swap="0 B"
+time=2025-05-24T09:07:24.006+08:00 level=INFO source=server.go:168 msg=offload library=metal layers.requested=-1 layers.model=33 layers.offload=33 layers.split="" memory.available="[10.7 GiB]" memory.gpu_overhead="0 B" memory.required.full="9.7 GiB" memory.required.partial="9.7 GiB" memory.required.kv="6.0 GiB" memory.required.allocations="[9.7 GiB]" memory.weights.total="2.0 GiB" memory.weights.repeating="1.9 GiB" memory.weights.nonrepeating="77.1 MiB" memory.graph.full="1.0 GiB" memory.graph.partial="1.0 GiB"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 36 key-value pairs and 197 tensors from /Users/lanss/.ollama/models/blobs/sha256-633fc5be925f9a484b61d6f9b9a78021eeb462100bd557309f01ba84cac26adf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = phi3
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Phi 3 Mini 128k Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = 128k-instruct
+llama_model_loader: - kv   4:                           general.basename str              = Phi-3
+llama_model_loader: - kv   5:                         general.size_label str              = mini
+llama_model_loader: - kv   6:                            general.license str              = mit
+llama_model_loader: - kv   7:                       general.license.link str              = https://huggingface.co/microsoft/Phi-...
+llama_model_loader: - kv   8:                               general.tags arr[str,3]       = ["nlp", "code", "text-generation"]
+llama_model_loader: - kv   9:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  10:                        phi3.context_length u32              = 131072
+llama_model_loader: - kv  11:  phi3.rope.scaling.original_context_length u32              = 4096
+llama_model_loader: - kv  12:                      phi3.embedding_length u32              = 3072
+llama_model_loader: - kv  13:                   phi3.feed_forward_length u32              = 8192
+llama_model_loader: - kv  14:                           phi3.block_count u32              = 32
+llama_model_loader: - kv  15:                  phi3.attention.head_count u32              = 32
+llama_model_loader: - kv  16:               phi3.attention.head_count_kv u32              = 32
+llama_model_loader: - kv  17:      phi3.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  18:                  phi3.rope.dimension_count u32              = 96
+llama_model_loader: - kv  19:                        phi3.rope.freq_base f32              = 10000.000000
+llama_model_loader: - kv  20:                          general.file_type u32              = 2
+llama_model_loader: - kv  21:              phi3.attention.sliding_window u32              = 262144
+llama_model_loader: - kv  22:              phi3.rope.scaling.attn_factor f32              = 1.190238
+llama_model_loader: - kv  23:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  24:                         tokenizer.ggml.pre str              = default
+llama_model_loader: - kv  25:                      tokenizer.ggml.tokens arr[str,32064]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+llama_model_loader: - kv  26:                      tokenizer.ggml.scores arr[f32,32064]   = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  27:                  tokenizer.ggml.token_type arr[i32,32064]   = [3, 3, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+llama_model_loader: - kv  28:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  29:                tokenizer.ggml.eos_token_id u32              = 32000
+llama_model_loader: - kv  30:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  31:            tokenizer.ggml.padding_token_id u32              = 32000
+llama_model_loader: - kv  32:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  33:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  34:                    tokenizer.chat_template str              = {% for message in messages %}{% if me...
+llama_model_loader: - kv  35:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   67 tensors
+llama_model_loader: - type q4_0:  129 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 2.03 GiB (4.55 BPW) 
+load: special tokens cache size = 14
+load: token to piece cache size = 0.1685 MB
+print_info: arch             = phi3
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 3.82 B
+print_info: general.name     = Phi 3 Mini 128k Instruct
+print_info: vocab type       = SPM
+print_info: n_vocab          = 32064
+print_info: n_merges         = 0
+print_info: BOS token        = 1 '<s>'
+print_info: EOS token        = 32000 '<|endoftext|>'
+print_info: EOT token        = 32007 '<|end|>'
+print_info: UNK token        = 0 '<unk>'
+print_info: PAD token        = 32000 '<|endoftext|>'
+print_info: LF token         = 13 '<0x0A>'
+print_info: EOG token        = 32000 '<|endoftext|>'
+print_info: EOG token        = 32007 '<|end|>'
+print_info: max token length = 48
+llama_model_load: vocab only - skipping tensors
+time=2025-05-24T09:07:24.023+08:00 level=INFO source=server.go:431 msg="starting llama server" cmd="/opt/homebrew/Cellar/ollama/0.7.0/bin/ollama runner --model /Users/lanss/.ollama/models/blobs/sha256-633fc5be925f9a484b61d6f9b9a78021eeb462100bd557309f01ba84cac26adf --ctx-size 16384 --batch-size 512 --n-gpu-layers 33 --threads 4 --parallel 2 --port 63278"
+time=2025-05-24T09:07:24.025+08:00 level=INFO source=sched.go:472 msg="loaded runners" count=1
+time=2025-05-24T09:07:24.025+08:00 level=INFO source=server.go:591 msg="waiting for llama runner to start responding"
+time=2025-05-24T09:07:24.025+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server not responding"
+time=2025-05-24T09:07:24.055+08:00 level=INFO source=runner.go:815 msg="starting go runner"
+time=2025-05-24T09:07:24.056+08:00 level=INFO source=ggml.go:104 msg=system Metal.0.EMBED_LIBRARY=1 CPU.0.ARM_FMA=1 CPU.0.FP16_VA=1 CPU.0.DOTPROD=1 CPU.0.LLAMAFILE=1 CPU.0.ACCELERATE=1 compiler=cgo(clang)
+time=2025-05-24T09:07:24.057+08:00 level=INFO source=runner.go:874 msg="Server listening on 127.0.0.1:63278"
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 36 key-value pairs and 197 tensors from /Users/lanss/.ollama/models/blobs/sha256-633fc5be925f9a484b61d6f9b9a78021eeb462100bd557309f01ba84cac26adf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = phi3
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Phi 3 Mini 128k Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = 128k-instruct
+llama_model_loader: - kv   4:                           general.basename str              = Phi-3
+llama_model_loader: - kv   5:                         general.size_label str              = mini
+llama_model_loader: - kv   6:                            general.license str              = mit
+llama_model_loader: - kv   7:                       general.license.link str              = https://huggingface.co/microsoft/Phi-...
+llama_model_loader: - kv   8:                               general.tags arr[str,3]       = ["nlp", "code", "text-generation"]
+llama_model_loader: - kv   9:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  10:                        phi3.context_length u32              = 131072
+llama_model_loader: - kv  11:  phi3.rope.scaling.original_context_length u32              = 4096
+llama_model_loader: - kv  12:                      phi3.embedding_length u32              = 3072
+llama_model_loader: - kv  13:                   phi3.feed_forward_length u32              = 8192
+llama_model_loader: - kv  14:                           phi3.block_count u32              = 32
+llama_model_loader: - kv  15:                  phi3.attention.head_count u32              = 32
+llama_model_loader: - kv  16:               phi3.attention.head_count_kv u32              = 32
+llama_model_loader: - kv  17:      phi3.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  18:                  phi3.rope.dimension_count u32              = 96
+llama_model_loader: - kv  19:                        phi3.rope.freq_base f32              = 10000.000000
+llama_model_loader: - kv  20:                          general.file_type u32              = 2
+llama_model_loader: - kv  21:              phi3.attention.sliding_window u32              = 262144
+llama_model_loader: - kv  22:              phi3.rope.scaling.attn_factor f32              = 1.190238
+llama_model_loader: - kv  23:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  24:                         tokenizer.ggml.pre str              = default
+llama_model_loader: - kv  25:                      tokenizer.ggml.tokens arr[str,32064]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+llama_model_loader: - kv  26:                      tokenizer.ggml.scores arr[f32,32064]   = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  27:                  tokenizer.ggml.token_type arr[i32,32064]   = [3, 3, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+llama_model_loader: - kv  28:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  29:                tokenizer.ggml.eos_token_id u32              = 32000
+llama_model_loader: - kv  30:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  31:            tokenizer.ggml.padding_token_id u32              = 32000
+llama_model_loader: - kv  32:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  33:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  34:                    tokenizer.chat_template str              = {% for message in messages %}{% if me...
+llama_model_loader: - kv  35:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   67 tensors
+llama_model_loader: - type q4_0:  129 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 2.03 GiB (4.55 BPW) 
+load: special tokens cache size = 14
+load: token to piece cache size = 0.1685 MB
+print_info: arch             = phi3
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 131072
+print_info: n_embd           = 3072
+print_info: n_layer          = 32
+print_info: n_head           = 32
+print_info: n_head_kv        = 32
+print_info: n_rot            = 96
+print_info: n_swa            = 262144
+print_info: n_swa_pattern    = 1
+print_info: n_embd_head_k    = 96
+print_info: n_embd_head_v    = 96
+print_info: n_gqa            = 1
+print_info: n_embd_k_gqa     = 3072
+print_info: n_embd_v_gqa     = 3072
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-05
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: f_attn_scale     = 0.0e+00
+print_info: n_ff             = 8192
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 10000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 4096
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 3B
+print_info: model params     = 3.82 B
+print_info: general.name     = Phi 3 Mini 128k Instruct
+print_info: vocab type       = SPM
+print_info: n_vocab          = 32064
+print_info: n_merges         = 0
+print_info: BOS token        = 1 '<s>'
+print_info: EOS token        = 32000 '<|endoftext|>'
+print_info: EOT token        = 32007 '<|end|>'
+print_info: UNK token        = 0 '<unk>'
+print_info: PAD token        = 32000 '<|endoftext|>'
+print_info: LF token         = 13 '<0x0A>'
+print_info: EOG token        = 32000 '<|endoftext|>'
+print_info: EOG token        = 32007 '<|end|>'
+print_info: max token length = 48
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+time=2025-05-24T09:07:24.277+08:00 level=INFO source=server.go:625 msg="waiting for server to become available" status="llm server loading model"
+load_tensors: offloading 32 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 33/33 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =    52.84 MiB
+load_tensors: Metal_Mapped model buffer size =  2021.83 MiB
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 2
+llama_context: n_ctx         = 16384
+llama_context: n_ctx_per_seq = 8192
+llama_context: n_batch       = 1024
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = 0
+llama_context: freq_base     = 10000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_per_seq (8192) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_load_library: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = false
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: skipping kernel_get_rows_bf16                     (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_1row              (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_f32_l4                (not supported)
+ggml_metal_init: skipping kernel_mul_mv_bf16_bf16                  (not supported)
+ggml_metal_init: skipping kernel_mul_mv_id_bf16_f32                (not supported)
+ggml_metal_init: skipping kernel_mul_mm_bf16_f32                   (not supported)
+ggml_metal_init: skipping kernel_mul_mm_id_bf16_f16                (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h64           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h80           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h96           (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h112          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h128          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h192          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk192_hv128   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_h256          (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_bf16_hk576_hv512   (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h96       (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h128      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h192      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk192_hv128 (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_h256      (not supported)
+ggml_metal_init: skipping kernel_flash_attn_ext_vec_bf16_hk576_hv512 (not supported)
+ggml_metal_init: skipping kernel_cpy_f32_bf16                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_f32                      (not supported)
+ggml_metal_init: skipping kernel_cpy_bf16_bf16                     (not supported)
+llama_context:        CPU  output buffer size =     0.27 MiB
+llama_kv_cache_unified: kv_size = 16384, type_k = 'f16', type_v = 'f16', n_layer = 32, can_shift = 1, padding = 32
+llama_kv_cache_unified:      Metal KV buffer size =  6144.00 MiB
+llama_kv_cache_unified: KV self size  = 6144.00 MiB, K (f16): 3072.00 MiB, V (f16): 3072.00 MiB
+llama_context:      Metal compute buffer size =  1092.00 MiB
+llama_context:        CPU compute buffer size =    38.01 MiB
+llama_context: graph nodes  = 1350
+llama_context: graph splits = 2
+time=2025-05-24T09:07:26.288+08:00 level=INFO source=server.go:630 msg="llama runner started in 2.26 seconds"
+time=2025-05-24T09:07:26.293+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=18689 keep=4 new=8192
+[GIN] 2025/05/24 - 09:09:02 | 200 |         1m38s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:09:02.867+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:09:02.878+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=18689 keep=4 new=8192
+[GIN] 2025/05/24 - 09:21:38 | 200 |        12m35s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:21:38.964+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:21:38.978+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=18689 keep=4 new=8192
+[GIN] 2025/05/24 - 09:33:32 | 200 |        11m53s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:33:32.460+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:33:32.472+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=18689 keep=4 new=8192
+[GIN] 2025/05/24 - 09:39:57 | 200 |         6m24s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:39:57.280+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:39:57.299+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=18689 keep=4 new=8192
+[GIN] 2025/05/24 - 09:40:41 | 200 | 44.058428917s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:40:41.358+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:40:41.364+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=18689 keep=4 new=8192
+[GIN] 2025/05/24 - 09:41:29 | 200 | 47.778302709s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:41:29.150+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:41:29.152+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=13698 keep=4 new=8192
+[GIN] 2025/05/24 - 09:43:56 | 200 |         2m27s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:43:57.013+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:43:57.019+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=13698 keep=4 new=8192
+[GIN] 2025/05/24 - 09:46:13 | 200 |         2m16s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T09:46:13.470+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T09:46:13.474+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=13698 keep=4 new=8192
+[GIN] 2025/05/24 - 10:03:14 | 200 |         17m0s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T10:03:14.536+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T10:03:14.543+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=13698 keep=4 new=8192
+[GIN] 2025/05/24 - 10:04:26 | 200 |         1m11s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T10:04:26.069+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T10:04:26.075+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=13698 keep=4 new=8192
+[GIN] 2025/05/24 - 10:05:40 | 200 |         1m14s |       127.0.0.1 | POST     "/api/chat"
+time=2025-05-24T10:05:40.849+08:00 level=WARN source=types.go:555 msg="invalid option provided" option=max_tokens
+time=2025-05-24T10:05:40.854+08:00 level=WARN source=runner.go:128 msg="truncating input prompt" limit=8192 prompt=13698 keep=4 new=8192
+[GIN] 2025/05/24 - 10:06:57 | 200 |         1m16s |       127.0.0.1 | POST     "/api/chat"
